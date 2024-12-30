@@ -2,10 +2,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs --port 5174",
     "build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "start": "vitepress dev docs"
+    "start": "vitepress dev docs --port 5174"
   },
   "devDependencies": {
     "vitepress": "latest"

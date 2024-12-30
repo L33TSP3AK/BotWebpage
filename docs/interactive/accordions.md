@@ -2,6 +2,7 @@
 
 <div class="accordion-container">
   <h2>Accordion Styles</h2>
+  
   <AccordionItem 
     type="cyber"
     title="System Status"
@@ -14,6 +15,7 @@
       { text: 'Network', value: '100Mbps' }
     ]" />
   </AccordionItem>
+
   <AccordionItem
     type="neon"
     title="Neon Style"
@@ -21,6 +23,7 @@
   >
     <p>This accordion features a neon glow effect with vibrant colors.</p>
   </AccordionItem>
+
   <AccordionItem
     type="hologram"
     title="Holographic Display"

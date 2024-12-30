@@ -131,7 +131,7 @@
             </div>
           </details>
         </div>
-      </div>
+      </div><br><div></div>
       <div class="component-card">
         <div class="component-header">
           <span class="component-icon">📁</span>

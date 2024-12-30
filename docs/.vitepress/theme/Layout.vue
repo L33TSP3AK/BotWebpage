@@ -3,6 +3,7 @@
 import DefaultTheme from 'vitepress/theme'
 import FooterFeatures from './components/FooterFeatures.vue'
 import AdminButton from './components/AdminButton.vue'
+import MemberButton from './components/MemberButton.vue'
 import { ref, onMounted } from 'vue'
 import ToastManager from './components/ToastManager.vue'
 
@@ -10,7 +11,6 @@ const { Layout } = DefaultTheme
 const toastManager = ref()
 
 onMounted(() => {
-  // Expose toast function globally for demo
   window.$vueApp = {
     showToast: (options) => {
       if (toastManager.value) {
@@ -33,6 +33,7 @@ defineExpose({ showToast })
   <Layout>
     <template #sidebar-nav-after>
       <AdminButton />
+      <MemberButton />
     </template>
     <template #layout-bottom>
       <FooterFeatures />

@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress';
 
-// refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
   lang: 'en-US',
   title: 'Doomsday Production',
@@ -26,12 +25,20 @@ export default defineConfig({
         ]
       },
       {
+        text: '📝 Member Portal',
+        collapsed: true,
+        items: [
+          { text: 'Search Data', link: '/member/search' },
+          { text: 'View Results', link: '/member/results' },
+          { text: 'Statistics', link: '/member/stats' }
+        ]
+      },
+      {
         text: '📝 Membership Info',
         collapsed: true,
         items: [
           { text: 'Membership', link: '/content/Membership' },
           { text: 'Membership Levels', link: '/content/Membership_Levels' },
-          { text: 'Pricing', link: '/content/Pricing' },
           { text: 'Limitations', link: '/content/Limitations' }
         ]
       },
@@ -50,41 +57,6 @@ export default defineConfig({
           { text: 'Bullet Softwares', link: '/programs/bullet-softwares' },
           { text: 'Browser Automation Studio', link: '/programs/browser-automation' },
           { text: 'BL Tools', link: '/programs/bl-tools' }
-        ]
-      },
-      {
-        text: '📚 Example Guides',
-        collapsed: true,
-        items: [
-          {
-            text: '🛒 Shopping',
-            collapsed: true,
-            items: [
-              { text: 'Pop Market', link: '/guides/shopping/guide-1' },
-              { text: 'Guide 2', link: '/guides/shopping/guide-2' },
-              { text: 'Guide 3', link: '/guides/shopping/guide-3' }
-            ]
-          },
-          {
-            text: '💳 E Gift Cards',
-            collapsed: true,
-            items: [
-              { text: 'HelloFresh', link: '/guides/gift-cards/guide-1' },
-              { text: 'Fanatics', link: '/guides/gift-cards/guide-2' },
-              { text: 'MegaBonanza', link: '/guides/gift-cards/guide-3' }
-            ]
-          },
-          {
-            text: '💰 Balance Checking',
-            collapsed: true,
-            items: [
-              { text: 'Wellsfargo', link: '/guides/balance-checking/wellsfargo' },
-              { text: 'TD Bank', link: '/guides/balance-checking/td-bank' },
-              { text: 'Citizens Bank', link: '/guides/balance-checking/citizens-bank' },
-              { text: 'Chase', link: '/guides/balance-checking/chase' },
-              { text: 'Capital One', link: '/guides/balance-checking/capital-one' }
-            ]
-          }
         ]
       }
     ],

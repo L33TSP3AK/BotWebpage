@@ -1,0 +1,41 @@
+/* Carding theme specific styles */
+:root {
+  --card-primary: #ff0066;
+  --card-secondary: #00ffff;
+  --card-bg: #000;
+  --card-border: rgba(255, 0, 102, 0.3);
+  --card-text: #fff;
+  --card-success: #00ff99;
+  --card-warning: #ffcc00;
+}
+
+.carding-theme {
+  background: linear-gradient(45deg, var(--card-bg), #1a0011);
+  color: var(--card-text);
+}
+
+.neon-glow {
+  text-shadow: 
+    0 0 5px var(--card-primary),
+    0 0 10px var(--card-primary),
+    0 0 20px var(--card-primary);
+}
+
+.cyber-scan {
+  background: 
+    linear-gradient(90deg, 
+      rgba(255, 0, 102, 0.1) 1px, 
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(255, 0, 102, 0.1) 1px,
+      transparent 1px
+    );
+  background-size: 20px 20px;
+  animation: scanEffect 20s linear infinite;
+}
+
+@keyframes scanEffect {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
