@@ -1,0 +1,213 @@
+/* Bank Heist Theme */
+:root {
+  --heist-primary: #00ff00;
+  --heist-secondary: #ff0000;
+  --heist-accent: #00e5ff;
+  --heist-warning: #ffff00;
+  --heist-bg: #000;
+  --heist-text: #fff;
+}
+
+.guide-container {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(45deg, #000, #111);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  overflow: hidden;
+  border: 1px solid var(--heist-primary);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.2),
+    inset 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+/* Security Camera Effect */
+.security-cam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      transparent 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+  animation: scanlines 10s linear infinite;
+  opacity: 0.3;
+}
+
+/* Night Vision Effect */
+.night-vision {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent,
+    rgba(0, 255, 0, 0.1)
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Surveillance Grid */
+.surveillance-grid {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+}
+
+/* Bank Vault Style Info Box */
+.vault-info {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--heist-primary);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.vault-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--heist-primary), transparent);
+  animation: scanline 2s linear infinite;
+}
+
+/* Security Level Indicator */
+.security-level {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid var(--heist-secondary);
+  border-radius: 1rem;
+  font-family: monospace;
+}
+
+.security-level::before {
+  content: '⚠';
+  animation: pulse 1s infinite;
+}
+
+/* Terminal Style Text */
+.terminal-text {
+  font-family: monospace;
+  color: var(--heist-primary);
+  text-shadow: 0 0 5px var(--heist-primary);
+  animation: textGlow 2s infinite;
+}
+
+/* Keypad Styles */
+.heist-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--heist-accent);
+}
+
+.heist-key {
+  aspect-ratio: 1;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 1.25rem;
+  color: var(--heist-accent);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.heist-key::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 229, 255, 0.2),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: keyGlow 3s infinite;
+}
+
+/* Animations */
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 5px var(--heist-primary); }
+  50% { text-shadow: 0 0 15px var(--heist-primary); }
+}
+
+@keyframes keyGlow {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Bank-specific themes */
+.chase-theme {
+  --bank-color: #0066ff;
+  border-color: var(--bank-color);
+}
+
+.wells-theme {
+  --bank-color: #ff3333;
+  border-color: var(--bank-color);
+}
+
+.td-theme {
+  --bank-color: #00ff00;
+  border-color: var(--bank-color);
+}
+
+.citizens-theme {
+  --bank-color: #ffff00;
+  border-color: var(--bank-color);
+}
+
+.capital-theme {
+  --bank-color: #ff00ff;
+  border-color: var(--bank-color);
+}
